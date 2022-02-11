@@ -1,29 +1,53 @@
-// jQuery
-// $("button:not(.remove)").on("click", function () {
-//   $(".example").css("justify-self", $(this).text());
-// });
+/**
+  // jQuery
+  $("button:not(.remove)").on("click", function () {
+    $(".example").css("justify-self", $(this).text());
+  }); 
+*/
 
-// TODO: 汎用関数化　Class化？ new インスタンス
-// to Vanilla
-var classNameButton = document.querySelectorAll(
-  '.buttons.justifySelf > button'
-);
+/**
+ * TODO: 汎用関数化　Class化？ new インスタンス
+ * TODO: 最終CSSのView
+ *
+ * DONE: jQuery to Vanilla
+ */
 
-for (let i = 0; i < classNameButton.length; i++) {
-  classNameButton[i].addEventListener('click', function () {
-    let tx = this.innerText;
-    console.log(tx);
-    //     justifySelf
-    let para = document.querySelector('.example');
-    let compStyles = window.getComputedStyle(para);
-    var style = para.style;
-    style.justifySelf = tx;
-    console.log(compStyles.getPropertyValue('justifySelf'));
-  });
-}
+const getSelectorAll = (x) => {
+  return document.querySelectorAll(`.buttons.${x} > button`);
+};
+
+let getCssProps = (searchElm, cssProps) => {
+  for (let i = 0; i < searchElm.length; i++) {
+    searchElm[i].addEventListener('click', function () {
+      let tx = this.innerText;
+      console.log(tx);
+      let para = document.querySelector('.example');
+      let compStyles = window.getComputedStyle(para);
+      const style = para.style;
+      style.cssProps = tx;
+      console.log(compStyles.getPropertyValue(cssProps));
+    });
+  }
+};
+
+const resultJustifySelf = getSelectorAll('justifySelf');
+getCssProps(resultJustifySelf, 'justifySelf');
+
+// for (let i = 0; i < resultJustifySelf.length; i++) {
+//   resultJustifySelf[i].addEventListener('click', function () {
+//     let tx = this.innerText;
+//     console.log(tx);
+//     //     justifySelf
+//     let para = document.querySelector('.example');
+//     let compStyles = window.getComputedStyle(para);
+//     const style = para.style;
+//     style.justifySelf = tx;
+//     console.log(compStyles.getPropertyValue('justifySelf'));
+//   });
+// }
 
 // Align
-var ButtonAlignItems = document.querySelectorAll(
+const ButtonAlignItems = document.querySelectorAll(
   '.buttons.alignItems > button'
 );
 
@@ -34,14 +58,14 @@ for (let i = 0; i < ButtonAlignItems.length; i++) {
     //     justifySelf
     let para = document.querySelector('.container');
     let compStyles = window.getComputedStyle(para);
-    var style = para.style;
+    const style = para.style;
     style.alignItems = tx;
     console.log(compStyles.getPropertyValue('alignItems'));
   });
 }
 
 // justify-content
-var ButtonJustifyContent = document.querySelectorAll(
+const ButtonJustifyContent = document.querySelectorAll(
   '.buttons.justifyContent > button'
 );
 
@@ -52,13 +76,13 @@ for (let i = 0; i < ButtonJustifyContent.length; i++) {
     // justifyContent
     let para = document.querySelector('.container');
     let compStyles = window.getComputedStyle(para);
-    var style = para.style;
+    const style = para.style;
     style.justifyContent = tx;
     console.log(compStyles.getPropertyValue('justifyContent'));
   });
 }
 
-// var className = document.querySelectorAll("element");
+// const className = document.querySelectorAll("element");
 
 // for (let i = 0; i < className.length; i++) {
 //   className[i].addEventListener("click", function () {

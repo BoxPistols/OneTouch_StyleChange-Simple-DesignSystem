@@ -1,3 +1,7 @@
+:root {
+  --green: hsla(95, 70%, 40%, 1);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,8 +15,24 @@ body {
 .wrap {
   padding: 4vh 4vw;
 }
+
 .buttons {
   margin-bottom: 1.5rem;
+}
+
+button {
+  margin: 0.1em;
+  padding: 0 2ch;
+  max-height: 4px;
+  border: none;
+}
+button:hover {
+  background-color: teal;
+}
+
+button:active,
+button:focus {
+  background-color: orange;
 }
 
 button:first-of-type::before {
@@ -20,12 +40,12 @@ button:first-of-type::before {
 }
 
 .container {
-  background-color: hsla(95, 70%, 40%, 1);
+  background-color: var(--green);
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-auto-rows: 85px;
   grid-gap: 10px;
-  max-width: 600px;
+  max-width: 768px;
   width: 90vw;
   /*   justify-items: stretch; */
   padding: 1rem;
@@ -42,4 +62,12 @@ button:first-of-type::before {
   margin: 1px;
   /*   justify-content: center; */
   padding: 1rem;
+}
+
+.conrtoller {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
 }
