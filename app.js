@@ -9,6 +9,11 @@
  * TODO: 汎用関数化　Class化？ new インスタンス
  * TODO: 最終CSSのView
  *
+ * React化：
+ *  useStateでボタンのテキストを取得、index.innerText?
+ *  実際のクラスターゲットに値を当てる
+ *  style.xxxが鬼門
+ *
  * DONE: jQuery to Vanilla
  */
 
@@ -17,29 +22,24 @@ const getSelectorAll = (x) => {
 };
 
 // resultJustifySelf = getSelectorAll('justifySelf');
-// Test
-const nums = () => {
-  let t = this.innerText;
-  let targetParam = document.querySelector(target);
-  let x = window.getComputedStyle(targetParam);
-  let thisStyle = targetParam.style;
-};
+
+/** 
+console.log(
+`style.justifySelf:${style.justifySelf} \n tx:${tx} \n compStyles[i]:${compStyles.justifySelf}`
+);
+*/
 
 const getCssProps = (searchElm, target) => {
   for (let i = 0; i < searchElm.length; i++) {
     searchElm[i].addEventListener('click', function () {
-      let para = document.querySelector(target);
-      let tx = this.innerText;
-      let compStyles = window.getComputedStyle(para);
-      const style = para.style;
+      para = document.querySelector(target);
+      tx = this.innerText;
+      compStyles = window.getComputedStyle(para);
+      style = para.style;
       style.justifySelf = tx;
-      console.log(
-        `style.justifySelf:${style.justifySelf} \n tx:${tx} \n compStyles[i]:${compStyles.justifySelf}`
-      );
     });
   }
 };
-// getCssProps(resultJustifySelf, '.example');
 
 const resProp = (_searchElm, _target) => {
   _res = getSelectorAll(_searchElm);
@@ -48,19 +48,6 @@ const resProp = (_searchElm, _target) => {
 };
 
 resProp('justifySelf', '.example');
-
-// justify Self
-// for (let i = 0; i < resultJustifySelf.length; i++) {
-//   resultJustifySelf[i].addEventListener('click', function () {
-//     let para = document.querySelector('.example');
-//     let tx = this.innerText;
-//     let compStyles = window.getComputedStyle(para);
-//     const style = para.style;
-//     console.log(tx);
-//     style.justifySelf = tx;
-//     console.log(resultJustifySelf[i]);
-//   });
-// }
 
 // Align
 const ButtonAlignItems = document.querySelectorAll(
