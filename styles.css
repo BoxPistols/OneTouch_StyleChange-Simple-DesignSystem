@@ -1,18 +1,24 @@
-body {
-  align-items: center;
-  background: #333;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 01;
 }
 
+body {
+  background: #333;
+}
+
+.wrap {
+  padding: 4vh 4vw;
+}
 .buttons {
   margin-bottom: 1.5rem;
 }
+
 button:first-of-type::before {
   content: 'none';
 }
+
 .container {
   background-color: hsla(95, 70%, 40%, 1);
   display: grid;
