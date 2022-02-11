@@ -18,28 +18,37 @@ const getSelectorAll = (x) => {
 
 // resultJustifySelf = getSelectorAll('justifySelf');
 // Test
+const nums = () => {
+  let t = this.innerText;
+  let targetParam = document.querySelector(target);
+  let x = window.getComputedStyle(targetParam);
+  let thisStyle = targetParam.style;
+};
+
 const getCssProps = (searchElm, target) => {
   for (let i = 0; i < searchElm.length; i++) {
     searchElm[i].addEventListener('click', function () {
-      // console.log(this.innerText);
-      let t = this.innerText;
-      let targetParam = document.querySelector(target);
-      let x = window.getComputedStyle(targetParam);
-      let thisStyle = targetParam.style;
-      thisStyle.justifySelf = t;
-      console.log(x.justifySelf, t);
+      let para = document.querySelector(target);
+      let tx = this.innerText;
+      let compStyles = window.getComputedStyle(para);
+      const style = para.style;
+      style.justifySelf = tx;
+      console.log(`style.justifySelf:${style} \n`);
+      // console.log(
+      //   `style.justifySelf:${style.justifySelf} \n tx:${tx} \n compStyles[i]:${compStyles.justifySelf}`
+      // );
     });
   }
 };
 // getCssProps(resultJustifySelf, '.example');
 
-const resProp = (cssParam, target) => {
-  _res = getSelectorAll(cssParam);
-  getCssProps(_res, target);
+const resProp = (_searchElm, _target) => {
+  _res = getSelectorAll(_searchElm);
+  getCssProps(_res, _target);
   return;
 };
 
-resProp('justifySelf', '.example', 'justifySelf');
+resProp('justifySelf', '.example');
 
 // justify Self
 // for (let i = 0; i < resultJustifySelf.length; i++) {
