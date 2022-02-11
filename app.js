@@ -29,26 +29,38 @@ console.log(
 );
 */
 
-const getCssProps = (searchElm, target) => {
+const getCssProps = (searchElm, target, val) => {
   for (let i = 0; i < searchElm.length; i++) {
     searchElm[i].addEventListener('click', function () {
-      para = document.querySelector(target);
-      tx = this.innerText;
-      compStyles = window.getComputedStyle(para);
-      style = para.style;
-      style.justifySelf = tx;
+      let para = document.querySelector(target);
+      let tx = this.innerText;
+      let compStyles = window.getComputedStyle(para);
+      //
+      let value = compStyles.getPropertyValue(val);
+      /**
+       *     let compStyles = window.getComputedStyle(para);
+    const style = para.style;
+    style.justifyContent = tx;
+
+       */
+      // const style = para.style;
+      // style.value = tx;
+      // value = para.val;
+      // value = tx;
+      console.log(val, value);
     });
   }
 };
 
-const resProp = (_searchElm, _target) => {
+const resProp = (_searchElm, _target, val) => {
   _res = getSelectorAll(_searchElm);
-  getCssProps(_res, _target);
-  return;
+  getCssProps(_res, _target, val);
 };
 
-resProp('justifySelf', '.example');
+justifySelf = 'justify-self';
+resProp('justifySelf', '.example', justifySelf);
 
+// ----------------
 // Align
 const ButtonAlignItems = document.querySelectorAll(
   '.buttons.alignItems > button'
