@@ -16,21 +16,27 @@ const getSelectorAll = (x) => {
   return document.querySelectorAll(`.buttons.${x} > button`);
 };
 
-const resultJustifySelf = getSelectorAll('justifySelf');
-
+// resultJustifySelf = getSelectorAll('justifySelf');
 // Test
-const getCssProps = (searchElm) => {
+const getCssProps = (searchElm, target) => {
   for (let i = 0; i < searchElm.length; i++) {
     searchElm[i].addEventListener('click', function () {
       console.log(this.innerText);
-      let para = document.querySelector('.example');
+      let para = document.querySelector(target);
       let compStyles = window.getComputedStyle(para);
       const style = para.style;
       style.justifySelf = this.innerText;
     });
   }
 };
-getCssProps(resultJustifySelf);
+// getCssProps(resultJustifySelf, '.example');
+
+const resProp = (cssParam, target) => {
+  _res = getSelectorAll(cssParam);
+  getCssProps(_res, target);
+};
+
+resProp('justifySelf', '.example');
 
 // justify Self
 // for (let i = 0; i < resultJustifySelf.length; i++) {
@@ -62,6 +68,9 @@ for (let i = 0; i < ButtonAlignItems.length; i++) {
     console.log(compStyles.getPropertyValue('alignItems'));
   });
 }
+
+// resProp('alignItems', '.container');
+// resProp('justifyContent', '.container');
 
 // justify-content
 const ButtonJustifyContent = document.querySelectorAll(
