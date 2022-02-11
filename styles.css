@@ -26,6 +26,7 @@ button {
   max-height: 4px;
   border: none;
 }
+
 button:hover {
   background-color: teal;
 }
