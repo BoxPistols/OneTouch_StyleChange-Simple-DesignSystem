@@ -21,11 +21,13 @@ const getSelectorAll = (x) => {
 const getCssProps = (searchElm, target) => {
   for (let i = 0; i < searchElm.length; i++) {
     searchElm[i].addEventListener('click', function () {
-      console.log(this.innerText);
-      let para = document.querySelector(target);
-      let compStyles = window.getComputedStyle(para);
-      const style = para.style;
-      style.justifySelf = this.innerText;
+      // console.log(this.innerText);
+      let t = this.innerText;
+      let targetParam = document.querySelector(target);
+      let x = window.getComputedStyle(targetParam);
+      let thisStyle = targetParam.style;
+      thisStyle.justifySelf = t;
+      console.log(x.justifySelf, t);
     });
   }
 };
@@ -34,9 +36,10 @@ const getCssProps = (searchElm, target) => {
 const resProp = (cssParam, target) => {
   _res = getSelectorAll(cssParam);
   getCssProps(_res, target);
+  return;
 };
 
-resProp('justifySelf', '.example');
+resProp('justifySelf', '.example', 'justifySelf');
 
 // justify Self
 // for (let i = 0; i < resultJustifySelf.length; i++) {
