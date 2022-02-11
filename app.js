@@ -33,10 +33,9 @@ const getCssProps = (searchElm, target) => {
       let compStyles = window.getComputedStyle(para);
       const style = para.style;
       style.justifySelf = tx;
-      console.log(`style.justifySelf:${style} \n`);
-      // console.log(
-      //   `style.justifySelf:${style.justifySelf} \n tx:${tx} \n compStyles[i]:${compStyles.justifySelf}`
-      // );
+      console.log(
+        `style.justifySelf:${style.justifySelf} \n tx:${tx} \n compStyles[i]:${compStyles.justifySelf}`
+      );
     });
   }
 };
