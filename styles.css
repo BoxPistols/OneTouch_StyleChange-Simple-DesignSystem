@@ -10,10 +10,11 @@
 
 body {
   background: #333;
+  font-family: optima;
 }
 
 .wrap {
-  padding: 4vh 4vw;
+  padding: 2vh 2vw;
 }
 
 .buttons {
@@ -25,15 +26,18 @@ button {
   padding: 0 2ch;
   max-height: 4px;
   border: none;
+  transition: 0.2s;
 }
 
 button:hover {
-  background-color: teal;
+  background-color: lime;
+  color: lime;
 }
 
 button:active,
 button:focus {
-  background-color: orange;
+  background-color: tomato;
+  color: tomato;
 }
 
 button:first-of-type::before {
@@ -70,5 +74,5 @@ button:first-of-type::before {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem;
+  padding: 2rem;
 }

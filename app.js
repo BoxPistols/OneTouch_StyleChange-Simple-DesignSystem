@@ -16,33 +16,32 @@ const getSelectorAll = (x) => {
   return document.querySelectorAll(`.buttons.${x} > button`);
 };
 
-let getCssProps = (searchElm, cssProps) => {
+const resultJustifySelf = getSelectorAll('justifySelf');
+
+// Test
+const getCssProps = (searchElm) => {
   for (let i = 0; i < searchElm.length; i++) {
     searchElm[i].addEventListener('click', function () {
-      let tx = this.innerText;
-      console.log(tx);
+      console.log(this.innerText);
       let para = document.querySelector('.example');
       let compStyles = window.getComputedStyle(para);
       const style = para.style;
-      style.cssProps = tx;
-      console.log(compStyles.getPropertyValue(cssProps));
+      style.justifySelf = this.innerText;
     });
   }
 };
+getCssProps(resultJustifySelf);
 
-const resultJustifySelf = getSelectorAll('justifySelf');
-getCssProps(resultJustifySelf, 'justifySelf');
-
+// justify Self
 // for (let i = 0; i < resultJustifySelf.length; i++) {
 //   resultJustifySelf[i].addEventListener('click', function () {
-//     let tx = this.innerText;
-//     console.log(tx);
-//     //     justifySelf
 //     let para = document.querySelector('.example');
+//     let tx = this.innerText;
 //     let compStyles = window.getComputedStyle(para);
 //     const style = para.style;
+//     console.log(tx);
 //     style.justifySelf = tx;
-//     console.log(compStyles.getPropertyValue('justifySelf'));
+//     console.log(resultJustifySelf[i]);
 //   });
 // }
 
@@ -82,11 +81,11 @@ for (let i = 0; i < ButtonJustifyContent.length; i++) {
   });
 }
 
-// const className = document.querySelectorAll("element");
+// const className = document.querySelectorAll('element');
 
 // for (let i = 0; i < className.length; i++) {
-//   className[i].addEventListener("click", function () {
-//     this.classList.toggle("example");
+//   className[i].addEventListener('click', function () {
+//     this.classList.toggle('example');
 //     alert(this.classList);
 //   });
 // }
