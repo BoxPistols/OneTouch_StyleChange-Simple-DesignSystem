@@ -23,60 +23,42 @@ const getSelectorAll = (x) => {
 
 resultJustifySelf = getSelectorAll('justifySelf');
 
-/** 
-console.log(
-`style.justifySelf:${style.justifySelf} \n tx:${tx} \n compStyles[i]:${compStyles.justifySelf}`
-);
-*/
 
 // justify-self
-const getCssProps = (_searchElm, _target, _styling) => {
-  for (let i = 0; i < resultJustifySelf.length; i++) {
-    resultJustifySelf[i].addEventListener('click', function () {
-      let tx = this.innerText;
-      let para = document.querySelector(_target);
+const getCssProps = (_searchElm, _target, _styling) => { // (ボタングループ, 表示のターゲット要素, 取得スタイル)
+  for (let i = 0; i < resultJustifySelf.length; i++) { // for文で回す
+    if (resultJustifySelf[i] = !null) {
+      resultJustifySelf[i].addEventListener('click', function () {
+        let tx = this.innerText; // ボタンのテキストを取得
+        let para = document.querySelector(_target); // セレクターでクラスを取得
 
-      let style = para.style[`${_styling}`];
-      // style.justifySelf = tx;
-      style = tx;
+        let style = para.style[`${_styling}`]; // styleの中身を設定[CSSのプロパティ]
+        style = tx; // ボタンのテキストを値としてセット
+        para.style.setProperty(_styling, tx); // styleの中身を設定[CSSのプロパティ, <- ボタンのテキスト]
 
-      let compStyles = window.getComputedStyle(para);
-      let r = compStyles[`${_styling}`];
-      r = tx
+        let compStyles = window.getComputedStyle(para); // styleの中身を取得
+        let r = compStyles[`${_styling}`]; // 最終styleの中身を取得
 
-
-      // Test 
-      console.log(style, r);
-    });
+        console.log(style, r);
+      });
+    }
   }
 };
 
-
-
-const resProp = (_searchElm, _target, _styling) => {
-  _res = getSelectorAll(_searchElm);
-  getCssProps(_res, _target, _styling);
+const resProp = (_searchElm, _target, _styling) => { // (ボタングループ, 表示のターゲット要素, 取得スタイル)
+  _res = getSelectorAll(_searchElm); // ボタングループを取得
+  getCssProps(_res, _target, _styling); // ターゲットに値を当てる
 };
 
-resProp('justifySelf', '.example', "justifySelf");
+resProp('justifySelf', '.example', "justify-self"); // (ボタングループ, 表示のターゲット要素, 取得スタイル)
 
-// test
-
-const elem = document.querySelector('.example');
-elem.style.setProperty('color', '#ff0', '');
-elem.style.setProperty('margin-bottom', '30px', 'important');
-
-console.log("x" + elem); // id="div1" の要素の align の値を表示します。
+/** Example setProperty
+ * elem.style.setProperty('color', '#ff0', '');
+ * const elem = document.querySelector('.example');
+ * elem.style.setProperty('margin-bottom', '30px', 'important');
+ */
 
 // ----------------
-
-
-
-
-
-
-
-
 
 
 
