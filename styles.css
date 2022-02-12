@@ -1,5 +1,7 @@
 :root {
 	--green: hsla(95, 70%, 40%, 1);
+	-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
 * {
@@ -15,7 +17,7 @@ body {
 }
 
 .wrap {
-	padding: 8% 2vw;
+	padding: 2% 2vw;
 }
 
 h3 {
@@ -25,14 +27,54 @@ h3 {
 	letter-spacing: .1ch;
 }
 
+/* ======= resultView-area ======= */
+.resultView-area {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.resultView-area > div {
+	text-align: center;
+	vertical-align: baseline;
+	margin: 0 8px;
+}
+.resultCodeArea > h2 {
+	margin: 0 0 -2px 0.5em;
+	font-size: 3em;
+	color: pink;
+}
+.resultCodeArea {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.resultCode {
+	position: fixed;
+	top: 2vh;
+	right: 2vw;
+	color: #fff;
+	border: 1px solid var(--green);
+	box-shadow: var(--shadow);
+	background-color: rgb(102 102 102 / 60%);
+	z-index: 10;
+	padding: 1em;
+	font-size: 1em;
+	text-align: left;
+	user-select: all;
+}
+
 /* ======= Set View Container ======= */
 .container {
 	background-color: var(--green);
-	display: grid;
+	/* to Toggle */
+	/* display: grid; */
 	grid-template-columns: repeat(3, auto);
 	grid-auto-rows: 85px;
-	/* display: flex; */
-	/* flex-wrap: wrap; */
+
+	/* default */
+	display: flex;
+	flex-wrap: wrap;
+
 	gap: 12px;
 	max-width: 768px;
 	max-height: 320px;
@@ -53,9 +95,7 @@ h3 {
 .element {
 	/*   align-items: center; */
 	background-color: #fff;
-	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-		0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-		0 100px 80px rgba(0, 0, 0, 0.12);
+	box-shadow: var(--shadow);
 	margin: 8px;
 	padding: 1rem;
 	min-width: 6em;
