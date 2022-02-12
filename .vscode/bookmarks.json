@@ -4,53 +4,13 @@
 			"path": "index.html",
 			"bookmarks": [
 				{
-					"line": 15,
+					"line": 14,
 					"column": 3,
 					"label": ""
 				},
 				{
 					"line": 25,
-					"column": 11,
-					"label": ""
-				},
-				{
-					"line": 35,
 					"column": 5,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "app.js",
-			"bookmarks": [
-				{
-					"line": 209,
-					"column": 10,
-					"label": ""
-				},
-				{
-					"line": 32,
-					"column": 32,
-					"label": ""
-				},
-				{
-					"line": 33,
-					"column": 7,
-					"label": ""
-				},
-				{
-					"line": 86,
-					"column": 12,
-					"label": ""
-				},
-				{
-					"line": 103,
-					"column": 12,
-					"label": ""
-				},
-				{
-					"line": 48,
-					"column": 1,
 					"label": ""
 				}
 			]
