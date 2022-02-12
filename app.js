@@ -8,6 +8,7 @@
  * DONE: jQuery to Vanilla
  */
 
+
 const getSelectorAll = (x) => {
   return document.querySelectorAll(`.buttons.${x} > button`);
 };
@@ -17,6 +18,7 @@ const getCssProps = (_searchElm, _target, _styling) => { // (ボタングルー�
   for (let i = 0; i < _searchElm.length; i++) { // for文で回す
     if (_searchElm[i] = !null) {
       _searchElm[i].addEventListener('click', function () {
+
         let tx = this.innerText; // ボタンのテキストを取得
         let para = document.querySelector(_target); // セレクターでクラスを取得
 
@@ -40,21 +42,76 @@ const resProp = (_searchElm, _target, _styling) => { // (ボタングループ, 
 
 resProp('justifyContent', '.container', "justify-content");
 resProp('alignItems', '.container', "align-items");
-resProp('justifySelf', '.example', "justify-self"); // (ボタングループ, 表示のターゲット要素, 取得スタイル)
-resProp('alignSelf', '.example', "align-self");
+resProp('flexDirection', '.container', "flex-direction");
+resProp('justifySelf', '.element', "justify-self"); // (ボタングループ, 表示のターゲット要素, 取得スタイル)
+resProp('alignSelf', '.element', "align-self");
+resProp('flexWrap', '.container', "flex-wrap");
 
+// Main Result View Container Element
+const container = document.querySelector(".container");
+
+// ======= Reset =======
+const reset = document.querySelector(".reset");
+
+reset.addEventListener('click', function () {
+  function removeStyles(container) {
+    container.removeAttribute('style');
+    if (container.childNodes.length > 0) {
+      for (let child in container.childNodes) {
+        /* filter containerement nodes only */
+        if (container.childNodes[child].nodeType == 1)
+          removeStyles(container.childNodes[child]);
+      }
+    }
+  }
+  removeStyles(container)
+});
+
+//  ======= Change Grid =======
+
+const setGridValue = (_tergetGridElem, _gridValue) => {
+  _tergetGridElem.addEventListener('click', function () {
+    container.style.setProperty('display', _gridValue);
+  });
+}
+const changeGridSetting = (_targetGridElem, _gridValue) => {
+  _targetGridElem = document.querySelector(_targetGridElem);
+  setGridValue(_targetGridElem, _gridValue);
+};
+changeGridSetting(".displayGrid", "grid");
+changeGridSetting(".displayFlex", "flex");
+
+// const displayGrid = document.querySelector(".displayGrid");
+// displayGrid.addEventListener('click', function () {
+//   container.style.setProperty('display', "grid");
+// });
+
+// const displayFlex = document.querySelector(".displayFlex");
+// displayFlex.addEventListener('click', function () {
+//   container.style.setProperty('display', "flex");
+// });
+
+// setGrid(".displayGrid", "grid");
+// setGrid(".displayFlex", "flex");
+
+/** 
+  const displayGrid = document.querySelector(".displayGrid");
+  const displayFlex = document.querySelector(".displayFlex");
+  container.style.setProperty('display', 'flex');
+  container.style.setProperty('display', 'grid');
+*/
 
 /** ==========================================================
   * 元のjQuery
   $("button:not(.remove)").on("click", function () {
-    $(".example").css("justify-self", $(this).text());
+    $(".selfElement").css("justify-self", $(this).text());
   }); 
 */
 
 
 /** ==========================================================
- * ======= setProperty example =======
+ * ======= setProperty selfElement =======
  * elem.style.setProperty('color', '#ff0', '');
- * const elem = document.querySelector('.example');
+ * const elem = document.querySelector('.selfElement');
  * elem.style.setProperty('margin-bottom', '30px', 'important');
  */

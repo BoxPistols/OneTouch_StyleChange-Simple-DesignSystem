@@ -11,13 +11,31 @@
 
 <body class="body">
   <div class="wrap">
+
+    <!-- grid flex -->
+    <div class="flex" style="display: flex; margin: 0 1em 2em 1em;">
+      <div class="buttons grid-area" style="margin: 0 1em 0 0;">
+        <h3>displayFlex</h3>
+        <button class="displayFlex">displayFlex</button>
+      </div>
+
+      <div class="buttons grid-area">
+        <h3>displayGrid</h3>
+        <button class="displayGrid">displayGrid</button>
+      </div>
+    </div>
+
+
     <!-- Elements -->
     <div class="container">
-      <div class="element example">Justify Me!</div>
-      <div class="element">Elm</div>
-      <div class="element">Elm</div>
-      <div class="element">Elm</div>
-      <div class="element">Elm</div>
+      <!-- <div class="element selfElement">Justify Me!</div> -->
+      <div class="element selfElement">self item</div>
+      <div class="element">Elm 2</div>
+      <div class="element">Elm 3</div>
+      <div class="element">Elm 4</div>
+      <div class="element">Elm 5</div>
+      <div class="element">Elm 7</div>
+      <div class="element">Elm last</div>
     </div>
 
     <div class="conrtoller">
@@ -29,7 +47,9 @@
         <button>start</button>
         <button>center</button>
         <button>end</button>
-        <button>stretch</button>
+        <button>space-between</button>
+        <button>space-around</button>
+        <button>space-evenly</button>
       </div>
 
       <!-- Align Items-->
@@ -40,6 +60,26 @@
         <button>center</button>
         <button>end</button>
         <button>baseline</button>
+        <button>stretch</button>
+      </div>
+
+      <!-- Flex Direction-->
+      <div class="buttons flexDirection">
+        <h3>flexDirection</h3>
+        <button></button>
+        <button>row</button>
+        <button>column</button>
+        <button>row-reverse</button>
+        <button>column-reverse</button>
+      </div>
+
+      <!-- Flex Wrap-->
+      <div class="buttons flexWrap">
+        <h3>flexWrap</h3>
+        <button></button>
+        <button>nowrap</button>
+        <button>wrap</button>
+        <button>wrap-reverse</button>
       </div>
 
       <!-- justifySelf -->
@@ -49,6 +89,7 @@
         <button>start</button>
         <button>center</button>
         <button>end</button>
+        <button>baseline</button>
         <button>stretch</button>
       </div>
 
@@ -61,10 +102,17 @@
         <button>end</button>
         <button>baseline</button>
       </div>
+
+      <!-- reset -->
+      <div class="buttons reset-area">
+        <h3>reset</h3>
+        <button class="reset">Reset</button>
+      </div>
+
     </div>
   </div>
+  <!-- JavaScript -->
   <script src="app.js"></script>
-  <!-- <script src="class.js"></script> -->
 </body>
 
 </html>

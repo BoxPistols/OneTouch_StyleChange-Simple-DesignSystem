@@ -1,83 +1,129 @@
 :root {
-  --green: hsla(95, 70%, 40%, 1);
+	--green: hsla(95, 70%, 40%, 1);
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  user-select: none;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	user-select: none;
 }
 
 body {
-  background: #333;
-  font-family: optima;
+	background: #333;
+	font-family: optima;
 }
 
 .wrap {
-  padding: 8% 2vw;
+	padding: 8% 2vw;
 }
 
+h3 {
+	line-height: 1.5;
+	margin-bottom: .5rem;
+	font-size: 2rem;
+	letter-spacing: .1ch;
+}
+
+/* ======= Set View Container ======= */
+.container {
+	background-color: var(--green);
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	grid-auto-rows: 85px;
+	/* display: flex; */
+	/* flex-wrap: wrap; */
+	gap: 12px;
+	max-width: 768px;
+	max-height: 320px;
+	overflow: auto;
+	width: 90vw;
+	padding: 1rem;
+}
+
+/* ======= Set Buttons ======= */
+.conrtoller {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+}
+
+.element {
+	/*   align-items: center; */
+	background-color: #fff;
+	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+		0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12);
+	margin: 8px;
+	padding: 1rem;
+	min-width: 6em;
+}
+
+.element:nth-child(even) {
+	min-width: 12em;
+	min-height: 5em;
+}
+
+.selfElement {
+	background-color: tomato;
+	color: white;
+	/* max-height: 2em;
+	width: 4em; */
+}
+/* .selfElement:nth-of-type(odd) {
+	background-color: teal;
+	color: white;
+} */
+
+/* ======= Set Buttons ======= */
+
+/* Common Buttons */
 .buttons {
-  margin-bottom: 1.5rem;
+	margin-bottom: 1em;
 }
 
 button {
-  margin: 0.1em;
-  padding: 0 2ch;
-  max-height: 4px;
-  border: none;
-  transition: 0.2s;
+	margin: 0.1em;
+	padding: 0 2ch;
+	max-height: 4px;
+	border: none;
+	transition: 0.2s;
 }
 
 button:hover {
-  background-color: lime;
-  color: lime;
+	background-color: lime;
+	color: lime;
 }
 
 button:active,
 button:focus {
-  background-color: tomato;
-  color: tomato;
+	background-color: orange;
+	color: orange;
 }
 
 button:first-of-type::before {
-  content: "none";
+	content: "none";
 }
 
-.container {
-  background-color: var(--green);
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-auto-rows: 85px;
-  grid-gap: 10px;
-  max-width: 768px;
-  width: 90vw;
-  /*   justify-items   : stretch; */
-  padding: 1rem;
+/* Reset Button */
+.reset-area {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
 }
 
-.element {
-  /*   align-items: center; */
-  background-color: #fff;
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12);
-  display: flex;
-  margin: 1px;
-  /*   justify-content: center; */
-  padding: 1rem;
+.reset-area h3 {
+	color: tomato;
 }
 
-.example {
-  color: currentColor;
+button.reset:first-of-type::before {
+	content: "";
 }
-
-.conrtoller {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
+button.reset {
+	color: tomato;
+	background-color: tomato;
 }
