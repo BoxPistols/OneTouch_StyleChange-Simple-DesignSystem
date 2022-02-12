@@ -39,7 +39,7 @@ h3 {
 	margin: 0 8px;
 }
 .resultCodeArea > h2 {
-	margin: 0 0 -2px 0.5em;
+	margin: 0 0.2em -0.6em 0;
 	font-size: 3em;
 	color: pink;
 }
@@ -48,21 +48,24 @@ h3 {
 	align-items: center;
 	justify-content: center;
 }
-.resultCode {
+.resultCode-valueArea {
 	position: fixed;
-	top: 2vh;
+	bottom: 2vh;
 	right: 2vw;
-	color: #fff;
 	border: 1px solid var(--green);
 	box-shadow: var(--shadow);
 	background-color: rgb(102 102 102 / 60%);
 	z-index: 10;
-	padding: 1em;
-	font-size: 1em;
-	text-align: left;
-	user-select: all;
 }
 
+.resultCode {
+	color: #fff;
+	font-size: 1em;
+	user-select: all;
+	text-align: left;
+	padding: 16px;
+	margin: 0;
+}
 /* ======= Set View Container ======= */
 .container {
 	background-color: var(--green);
@@ -77,18 +80,15 @@ h3 {
 
 	gap: 12px;
 	max-width: 768px;
-	max-height: 320px;
+	max-height: 240px;
 	overflow: auto;
-	width: 90vw;
 	padding: 1rem;
 }
 
 /* ======= Set Buttons ======= */
 .conrtoller {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	display: grid;
+	place-content: center;
 	padding: 2rem;
 }
 
@@ -109,12 +109,9 @@ h3 {
 .selfElement {
 	background-color: tomato;
 	color: white;
-	/* max-height: 2em;
-	width: 4em; */
 }
 /* .selfElement:nth-of-type(odd) {
 	background-color: teal;
-	color: white;
 } */
 
 /* ======= Set Buttons ======= */
@@ -156,14 +153,15 @@ button:first-of-type::before {
 	padding: 1rem;
 }
 
-.reset-area h3 {
+/* .reset-area h3 {
 	color: tomato;
-}
+} */
 
-button.reset:first-of-type::before {
+button.reset::before,
+button.displayFlex::before,
+button.displayGrid::before {
 	content: "";
 }
 button.reset {
 	color: tomato;
-	background-color: tomato;
 }
