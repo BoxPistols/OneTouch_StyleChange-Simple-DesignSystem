@@ -1,28 +1,3 @@
-
-// import { myutil } from './module.js'
-async function main() {
-  const { myutil } = await import('./module.js');
-  var ret = myutil(2, 8);
-  var elem = document.getElementById("output");
-  elem.innerText = ret;
-} 0
-main()
-
-/**
- * TODO: 汎用関数化、ファイル分割
- *
- * TODO: React化
- *    useStateでボタンのテキストを取得、index.innerText?
- *    実際のクラスターゲットに値を当てる
- *
- * DONE: jQuery to Vanilla
- */
-
-
-const getSelectorAll = (x) => {
-  return document.querySelectorAll(`.buttons.${x} > button`);
-};
-
 const getCssProps = (_searchElm, _target, _styling) => { // (ボタングループ, 表示のターゲット要素, 取得スタイル)
   for (let i = 0; i < _searchElm.length; i++) { // for文で回す
     if (_searchElm[i] = !null) {
@@ -62,6 +37,10 @@ const getCssProps = (_searchElm, _target, _styling) => { // (ボタングルー�
       });
     }
   }
+};
+
+const getSelectorAll = (x) => {
+  return document.querySelectorAll(`.buttons.${x} > button`);
 };
 
 const resProp = (_searchElm, _target, _styling) => { // (ボタングループ, 表示のターゲット要素, 取得スタイル)
@@ -114,6 +93,7 @@ const setGridValue = (_tergetGridElem, _gridValue) => {
     resultGrid.innerText = window.getComputedStyle(container).display;
   });
 }
+
 const changeGridSetting = (_targetGridElem, _gridValue) => {
   _targetGridElem = document.querySelector(_targetGridElem);
   setGridValue(_targetGridElem, _gridValue);
@@ -121,12 +101,45 @@ const changeGridSetting = (_targetGridElem, _gridValue) => {
 changeGridSetting(".displayGrid", "grid");
 changeGridSetting(".displayFlex", "flex");
 
+
+// ======= Girid Pattern　
+const gridNone = document.querySelector(".grid-none-repeat");
+gridNone.addEventListener('click', function () {
+  container.style.setProperty('grid-template-columns', "none");
+});
+
+
+const gridRepeat3 = document.querySelector(".grid-repeat-3");
+gridRepeat3.addEventListener('click', function () {
+  container.style.setProperty('grid-template-columns', "repeat(3, auto)");
+});
+
+const gridRepeat4 = document.querySelector(".grid-repeat-4");
+gridRepeat4.addEventListener('click', function () {
+  container.style.setProperty('grid-template-columns', "repeat(4, auto)");
+});
+
+const gridAutoFit120 = document.querySelector(".grid-auto-fit-120");
+gridAutoFit120.addEventListener('click', function () {
+  container.style.setProperty('grid-template-columns', "repeat(auto-fit, minmax(120px, 1fr))");
+});
+
+
 //  ======= Toggle Code =======
 var trigger = document.querySelector('.toggle-code-trigger');
 trigger.addEventListener('click', function () {
   var target = document.querySelector('.resultCssCode');
   target.classList.toggle("showCodeToggle")
 }, false);
+
+// Import Test
+async function main(x, y) {
+  const { myutil } = await import('./module.js');
+  var ret = myutil(x, y);
+  console.log(ret);
+} 0
+main(12, 7)
+
 
 
 /** Code Memo ==========================================================
@@ -158,4 +171,18 @@ trigger.addEventListener('click', function () {
  * elem.style.setProperty('color', '#ff0', '');
  * const elem = document.querySelector('.selfElement');
  * elem.style.setProperty('margin-bottom', '30px', 'important');
+ */
+
+/** ==========================================================
+ * TODO: 汎用関数化
+ *    ファイル分割
+ *
+ * TODO: React化
+ *    useStateでボタンのテキストを取得、index.innerText?
+ *    実際のクラスターゲットに値を当てる
+ * 
+ * TODO: 付加機能
+ *    ClipBoard
+ * 
+ * DONE: jQuery to Vanilla
  */

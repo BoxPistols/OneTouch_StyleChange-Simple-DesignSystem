@@ -25,3 +25,11 @@
 	align-items: center;
 	justify-content: center;
 }
+
+/* grid-area */
+.grid-pattern {
+	cursor: pointer;
+}
+.grid-pattern:hover {
+	color: var(--green);
+}

@@ -4,13 +4,18 @@
 			"path": "index.html",
 			"bookmarks": [
 				{
-					"line": 132,
-					"column": 9,
+					"line": 50,
+					"column": 35,
 					"label": ""
-				},
+				}
+			]
+		},
+		{
+			"path": "app.js",
+			"bookmarks": [
 				{
-					"line": 19,
-					"column": 1,
+					"line": 104,
+					"column": 14,
 					"label": ""
 				}
 			]
