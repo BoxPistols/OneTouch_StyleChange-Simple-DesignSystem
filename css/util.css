@@ -1,0 +1,35 @@
+/* flex */
+.fx {
+	display: flex;
+}
+
+.fx-col {
+	flex-direction: column;
+}
+
+.fx-jc-c {
+	justify-content: center;
+}
+
+.fx-ai-c {
+	align-items: center;
+}
+
+.fx-cc {
+	justify-content: center;
+	align-items: center;
+}
+
+/* spacing */
+.mt-s {
+	margin-top: .5rem;
+}
+.mb-s {
+	margin-bottom: .5rem;
+}
+.mt-m {
+	margin-top: 1rem;
+}
+.mb-m {
+	margin-bottom: 1rem;
+}

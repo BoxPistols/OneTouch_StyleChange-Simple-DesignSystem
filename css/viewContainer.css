@@ -1,0 +1,17 @@
+/* ======= Set View Container ======= */
+.container {
+	background-color: var(--green);
+	/* to Toggle */
+	/* display: grid; */
+	grid-template-columns: repeat(4, auto);
+	/* default */
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	max-width: 768px;
+	width: 100%;
+	min-height: 25vh;
+	max-height: 400px;
+	overflow: auto;
+	padding: 1rem;
+}

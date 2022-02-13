@@ -1,0 +1,90 @@
+/* ======= Set Buttons ======= */
+.conrtoller {
+	display: grid;
+	place-content: center;
+	padding: 1rem;
+}
+
+.element {
+	/*   align-items: center; */
+	background-color: #fff;
+	box-shadow: var(--shadow);
+	margin: 8px;
+	padding: 1rem;
+	min-width: 6em;
+}
+
+.element:nth-child(even) {
+	min-width: 12em;
+	min-height: 5em;
+}
+
+.element:nth-child(6) {
+	width: 3em;
+	height: 8em;
+	background-color: yellow;
+}
+.element:last-child {
+	background-color: teal;
+	color: white;
+}
+
+.selfElement {
+	background-color: tomato;
+	color: white;
+}
+/* .selfElement:nth-of-type(odd) {
+	background-color: teal;
+} */
+
+/* ======= Set Buttons ======= */
+
+/* Common Buttons */
+.buttons {
+	margin-bottom: 1em;
+}
+
+button {
+	margin: 0.1em;
+	padding: 0 2ch;
+	max-height: 4px;
+	border: none;
+	transition: 0.2s;
+}
+
+button:hover {
+	background-color: lime;
+	color: lime;
+}
+
+button:active,
+button:focus {
+	background-color: orange;
+	color: orange;
+}
+
+button:first-of-type::before {
+	content: "none";
+}
+
+/* Reset Button */
+.reset-area {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+}
+
+/* .reset-area h3 {
+	color: tomato;
+} */
+
+button.reset::before,
+button.displayFlex::before,
+button.displayGrid::before {
+	content: "";
+}
+button.reset {
+	color: tomato;
+}

@@ -12,23 +12,25 @@
 <body class="body">
   <div class="wrap">
 
+    <!-- show code -->
     <div class="resultCode-valueArea">
-      <p class="resultCode">
+      <div class="toggle-code-trigger">ToggleCode</div>
+      <p class="resultCode showCodeToggle">
         value
       </p>
     </div>
 
     <!-- grid flex -->
-    <div class="resultView-area" style="display: flex; margin: 0 1em 2em 1em;">
+    <div class="resultView-area">
 
       <!-- View flex / Grid -->
-      <div class="resultCodeArea grid-area">
+      <div class="handleCodeArea">
         <h2 class="resultGrid">
           flex
         </h2>
       </div>
 
-      <div class="buttons grid-area">
+      <div class="buttons flex-area">
         <h3>displayFlex</h3>
         <button class="displayFlex">displayFlex</button>
       </div>
@@ -38,24 +40,21 @@
         <button class="displayGrid">displayGrid</button>
       </div>
 
+      <div class="buttons grid-area">
+        <div class="fx fx-col fx-cc mt-m">
+          <!-- FIXME!: set-ja -->
+          <span class="grid-none-repeat">non-repeat</span>
+          <span class="grid-repeat-3">repeat(3, auto)</span>
+          <span class="grid-repeat-4">repeat(4, auto)</span>
+        </div>
+      </div>
+
       <!-- reset -->
       <div class="buttons reset-area">
         <h3>reset</h3>
         <button class="reset">Reset</button>
       </div>
 
-    </div>
-
-    <!-- Elements -->
-    <div class="container">
-      <!-- <div class="element selfElement">Justify Me!</div> -->
-      <div class="element selfElement">self item</div>
-      <div class="element">Elm 2</div>
-      <div class="element">Elm 3</div>
-      <div class="element">Elm 4</div>
-      <div class="element">Elm 5</div>
-      <div class="element">Elm 7</div>
-      <div class="element">Elm last</div>
     </div>
 
     <div class="conrtoller">
@@ -124,6 +123,21 @@
       </div>
 
     </div>
+
+
+    <!-- Elements -->
+    <div class="container">
+      <!-- <div class="element selfElement">Justify Me!</div> -->
+      <div class="element selfElement">self item</div>
+      <div class="element">Elm 2</div>
+      <div class="element">Elm 3</div>
+      <div class="element">Elm 4</div>
+      <div class="element">Elm 5</div>
+      <div class="element">Elm 6</div>
+      <div class="element">Elm 7</div>
+      <div class="element">Elm last</div>
+    </div>
+
   </div>
   <!-- JavaScript -->
   <script src="app.js"></script>

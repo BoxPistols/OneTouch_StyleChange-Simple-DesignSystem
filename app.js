@@ -27,7 +27,7 @@ const getCssProps = (_searchElm, _target, _styling) => { // (ボタングルー�
 
 
         // コードの可視化
-        let codeAll = window.getComputedStyle(container)
+        let codeAll = window.getComputedStyle(container);
         let codeAllselfElement = window.getComputedStyle(selfElement)
 
         let getCssResult = (
@@ -110,8 +110,21 @@ const changeGridSetting = (_targetGridElem, _gridValue) => {
 changeGridSetting(".displayGrid", "grid");
 changeGridSetting(".displayFlex", "flex");
 
+//  ======= Toggle Code =======
+var trigger = document.querySelector('.toggle-code-trigger');
+trigger.addEventListener('click', function () {
+  var target = document.querySelector('.resultCode');
+  target.classList.toggle("showCodeToggle")
+}, false);
+
 
 /** Code Memo ==========================================================
+ * @see: 
+ *    https://developer.mozilla.org/ja/docs/Web/API/Element
+ *    https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Grid_Layout
+ *    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout
+ * /
+ 
 /** Get Grid & Toggle
  const displayGrid = document.querySelector(".displayGrid");
  const displayFlex = document.querySelector(".displayFlex");
