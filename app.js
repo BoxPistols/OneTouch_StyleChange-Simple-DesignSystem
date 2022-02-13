@@ -87,6 +87,7 @@ reset.addEventListener('click', function () {
 
 //  ======= Change Grid =======
 
+
 const setGridValue = (_tergetGridElem, _gridValue) => {
   _tergetGridElem.addEventListener('click', function () {
     container.style.setProperty('display', _gridValue);
@@ -103,25 +104,29 @@ changeGridSetting(".displayFlex", "flex");
 
 
 // ======= Girid Pattern　
+
+const getTargetVal = (_val) => {
+  container.style.setProperty('grid-template-columns', _val);
+}
+
 const gridNone = document.querySelector(".grid-none-repeat");
 gridNone.addEventListener('click', function () {
-  container.style.setProperty('grid-template-columns', "none");
+  getTargetVal('none');
 });
-
 
 const gridRepeat3 = document.querySelector(".grid-repeat-3");
 gridRepeat3.addEventListener('click', function () {
-  container.style.setProperty('grid-template-columns', "repeat(3, auto)");
+  getTargetVal('repeat(3, auto)');
 });
 
 const gridRepeat4 = document.querySelector(".grid-repeat-4");
 gridRepeat4.addEventListener('click', function () {
-  container.style.setProperty('grid-template-columns', "repeat(4, auto)");
+  getTargetVal('repeat(4, auto)');
 });
 
 const gridAutoFit120 = document.querySelector(".grid-auto-fit-120");
 gridAutoFit120.addEventListener('click', function () {
-  container.style.setProperty('grid-template-columns', "repeat(auto-fit, minmax(120px, 1fr))");
+  getTargetVal('repeat(auto-fit, minmax(120px, 1fr))');
 });
 
 
