@@ -1,3 +1,13 @@
+
+// import { myutil } from './module.js'
+async function main() {
+  const { myutil } = await import('./module.js');
+  var ret = myutil(2, 8);
+  var elem = document.getElementById("output");
+  elem.innerText = ret;
+} 0
+main()
+
 /**
  * TODO: 汎用関数化、ファイル分割
  *

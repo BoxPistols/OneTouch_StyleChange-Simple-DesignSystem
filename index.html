@@ -9,144 +9,158 @@
   <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
+<div id="output">xxx</div>
+
 <body class="body">
+
   <div class="wrap">
 
-    <!-- show code -->
-    <div class="cssCode-valueArea">
-      <div class="toggle-code-trigger">ToggleCode</div>
-      <p class="resultCssCode showCodeToggle">
-        value
-      </p>
+    <div class="logo">
+      <h1>The Grid</h1>
+      <span>OneTouch StyleChange DesignSystem</span>
     </div>
 
-    <!-- grid flex -->
-    <div class="resultView-area">
+    <header class="header">
 
-      <!-- View flex / Grid -->
-      <div class="handleCodeArea">
-        <h2 class="resultGrid">
-          flex
-        </h2>
+      <!-- show code -->
+      <div class="cssCode-valueArea">
+        <div class="toggle-code-trigger">ToggleCode</div>
+        <p class="resultCssCode showCodeToggle">
+          value
+        </p>
       </div>
 
-      <div class="buttons flex-area">
-        <h3>displayFlex</h3>
-        <button class="displayFlex">displayFlex</button>
-      </div>
+      <!-- grid flex -->
+      <div class="resultView-area">
 
-      <div class="buttons grid-area">
-        <h3>displayGrid</h3>
-        <button class="displayGrid">displayGrid</button>
-      </div>
-
-      <div class="buttons grid-area">
-        <div class="fx fx-col fx-cc mt-m">
-          <!-- FIXME!: set-ja -->
-          <span class="grid-none-repeat">non-repeat</span>
-          <span class="grid-repeat-3">repeat(3, auto)</span>
-          <span class="grid-repeat-4">repeat(4, auto)</span>
+        <!-- View flex / Grid -->
+        <div class="handleCodeArea">
+          <h2 class="resultGrid">
+            flex
+          </h2>
         </div>
+
+        <div class="buttons flex-area">
+          <h3>displayFlex</h3>
+          <button class="displayFlex">displayFlex</button>
+        </div>
+
+        <div class="buttons grid-area">
+          <h3>displayGrid</h3>
+          <button class="displayGrid">displayGrid</button>
+        </div>
+
+        <div class="buttons grid-area">
+          <div class="fx fx-col fx-cc mt-m">
+            <!-- FIXME!: set-ja -->
+            <span class="grid-none-repeat">non-repeat</span>
+            <span class="grid-repeat-3">repeat(3, auto)</span>
+            <span class="grid-repeat-4">repeat(4, auto)</span>
+          </div>
+        </div>
+
+        <!-- reset -->
+        <div class="buttons reset-area">
+          <h3>reset</h3>
+          <button class="reset">Reset</button>
+        </div>
+
+      </div>
+    </header>
+
+    <div class="main-contents-wrap">
+
+      <div class="conrtoller">
+
+        <!-- Justify Content -->
+        <div class="buttons justifyContent">
+          <h3>justifyContent</h3>
+          <button></button>
+          <button>start</button>
+          <button>center</button>
+          <button>end</button>
+          <button>space-between</button>
+          <button>space-around</button>
+          <button>space-evenly</button>
+        </div>
+
+        <!-- Align Items-->
+        <div class="buttons alignItems">
+          <h3>alignItems</h3>
+          <button></button>
+          <button>start</button>
+          <button>center</button>
+          <button>end</button>
+          <button>baseline</button>
+          <button>stretch</button>
+        </div>
+
+        <!-- Flex Direction-->
+        <div class="buttons flexDirection">
+          <h3>flexDirection <span>with Flex</span></h3>
+          <button></button>
+          <button>row</button>
+          <button>column</button>
+          <button>row-reverse</button>
+          <button>column-reverse</button>
+        </div>
+
+        <!-- Flex Wrap-->
+        <div class="buttons flexWrap">
+          <h3>flexWrap <span>with Flex</span></h3>
+          <button></button>
+          <button>nowrap</button>
+          <button>wrap</button>
+          <button>wrap-reverse</button>
+        </div>
+
+        <!-- justifySelf -->
+        <div class="buttons justifySelf">
+          <h3>justifySelf <span>with Grid</span></h3>
+          <button></button>
+          <button>start</button>
+          <button>center</button>
+          <button>end</button>
+          <button>baseline</button>
+          <button>stretch</button>
+        </div>
+
+        <!-- Align Self-->
+        <div class="buttons alignSelf">
+          <h3>alignSelf</h3>
+          <button></button>
+          <button>start</button>
+          <button>center</button>
+          <button>end</button>
+          <button>baseline</button>
+        </div>
+
+        <!-- Place Items -->
+        <div class="buttons placeItems">
+          <h3>placeItems <span>with Grid</span></h3>
+          <button></button>
+          <button>start</button>
+          <button>center</button>
+          <button>end</button>
+          <button>baseline</button>
+          <button>stretch</button>
+        </div>
+
       </div>
 
-      <!-- reset -->
-      <div class="buttons reset-area">
-        <h3>reset</h3>
-        <button class="reset">Reset</button>
+      <!-- Elements -->
+      <div class="container">
+        <!-- <div class="element selfElement">Justify Me!</div> -->
+        <div class="element selfElement">self item</div>
+        <div class="element">Elm 2</div>
+        <div class="element">Elm 3</div>
+        <div class="element">Elm 4</div>
+        <div class="element">Elm 5</div>
+        <div class="element">Elm 6</div>
+        <div class="element">Elm 7</div>
+        <div class="element">Elm last</div>
       </div>
 
-    </div>
-
-    <div class="conrtoller">
-
-      <!-- Justify Content -->
-      <div class="buttons justifyContent">
-        <h3>justifyContent</h3>
-        <button></button>
-        <button>start</button>
-        <button>center</button>
-        <button>end</button>
-        <button>space-between</button>
-        <button>space-around</button>
-        <button>space-evenly</button>
-      </div>
-
-      <!-- Align Items-->
-      <div class="buttons alignItems">
-        <h3>alignItems</h3>
-        <button></button>
-        <button>start</button>
-        <button>center</button>
-        <button>end</button>
-        <button>baseline</button>
-        <button>stretch</button>
-      </div>
-
-      <!-- Flex Direction-->
-      <div class="buttons flexDirection">
-        <h3>flexDirection <span>with Flex</span></h3>
-        <button></button>
-        <button>row</button>
-        <button>column</button>
-        <button>row-reverse</button>
-        <button>column-reverse</button>
-      </div>
-
-      <!-- Flex Wrap-->
-      <div class="buttons flexWrap">
-        <h3>flexWrap <span>with Flex</span></h3>
-        <button></button>
-        <button>nowrap</button>
-        <button>wrap</button>
-        <button>wrap-reverse</button>
-      </div>
-
-      <!-- justifySelf -->
-      <div class="buttons justifySelf">
-        <h3>justifySelf <span>with Grid</span></h3>
-        <button></button>
-        <button>start</button>
-        <button>center</button>
-        <button>end</button>
-        <button>baseline</button>
-        <button>stretch</button>
-      </div>
-
-      <!-- Align Self-->
-      <div class="buttons alignSelf">
-        <h3>alignSelf</h3>
-        <button></button>
-        <button>start</button>
-        <button>center</button>
-        <button>end</button>
-        <button>baseline</button>
-      </div>
-
-      <!-- Place Items -->
-      <div class="buttons placeItems">
-        <h3>placeItems <span>with Grid</span></h3>
-        <button></button>
-        <button>start</button>
-        <button>center</button>
-        <button>end</button>
-        <button>baseline</button>
-        <button>stretch</button>
-      </div>
-
-    </div>
-
-
-    <!-- Elements -->
-    <div class="container">
-      <!-- <div class="element selfElement">Justify Me!</div> -->
-      <div class="element selfElement">self item</div>
-      <div class="element">Elm 2</div>
-      <div class="element">Elm 3</div>
-      <div class="element">Elm 4</div>
-      <div class="element">Elm 5</div>
-      <div class="element">Elm 6</div>
-      <div class="element">Elm 7</div>
-      <div class="element">Elm last</div>
     </div>
 
   </div>

@@ -1,17 +1,50 @@
-/* ======= Set View Container ======= */
+/* ======= Base Main ======= */
+@media only screen and (max-width: 768px) {
+	.resultView-area {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+.main-contents-wrap {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	padding: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+	.main-contents-wrap {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ======= Set Buttons ======= */
+.conrtoller {
+	display: grid;
+	place-content: center;
+}
+@media only screen and (max-width: 768px) {
+	.conrtoller {
+		order: 2;
+	}
+}
+
+/* ======= Set View ======= */
 .container {
 	background-color: var(--green);
+	filter: saturate(50%) contrast(1.5);
 	/* to Toggle */
 	/* display: grid; */
-	grid-template-columns: repeat(4, auto);
+	grid-template-columns: repeat(3, auto);
 	/* default */
 	display: flex;
 	flex-wrap: wrap;
 	gap: 8px;
+	padding: 1.6rem;
 	max-width: 768px;
 	width: 100%;
-	min-height: 25vh;
 	max-height: 400px;
 	overflow: auto;
-	padding: 1rem;
 }

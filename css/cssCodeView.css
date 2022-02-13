@@ -1,11 +1,8 @@
 /* ======= CSS Result View Box ======= */
 .cssCode-valueArea {
 	position: fixed;
-	top: 33vh;
-	right: 2vw;
-	/* border: 1px solid var(--green);
-	box-shadow: var(--shadow); */
-	/* background-color: rgb(102 102 102 / 60%); */
+	top: 36px;
+	right: 16px;
 	z-index: 10;
 }
 .toggle-code-trigger {
@@ -27,21 +24,21 @@
 	overflow: auto;
 	border: none;
 	background: none;
-	transition: .3s;
+	transition: background .2s;
 }
 
 .resultCssCode.showCodeToggle {
 	border: 1px solid var(--green);
 	border-radius: .5rem;
-	background-color: rgb(20 20 20 / 50%);
+	background: rgb(20 20 20 / 70%);
 	color: var(--green);
+	filter: saturate(50%) contrast(1.5);
 	font-size: 1.6rem;
+	line-height: 1.2;
 	user-select: all;
 	text-align: left;
 	margin: 0;
 	padding: 4px 16px;
 	height: 100%;
-	padding: 16px;
-
-	transition: .3s;
+	transition: background .2s;
 }

@@ -1,9 +1,4 @@
 /* ======= Set Buttons ======= */
-.conrtoller {
-	display: grid;
-	place-content: center;
-	padding: 1rem;
-}
 
 .element {
 	/*   align-items: center; */
@@ -46,10 +41,12 @@
 
 button {
 	margin: 0.1em;
+	margin-bottom: 2em;
 	padding: 0 2ch;
 	max-height: 4px;
 	border: none;
 	transition: 0.2s;
+	filter: saturate(90%) contrast(1.5);
 }
 
 button:hover {
