@@ -1,0 +1,43 @@
+/* ======= CSS Result View Box ======= */
+.cssCode-valueArea {
+	position: fixed;
+	top: 25vh;
+	right: 2vw;
+	/* border: 1px solid var(--green);
+	box-shadow: var(--shadow); */
+	/* background-color: rgb(102 102 102 / 60%); */
+	z-index: 10;
+}
+.toggle-code-trigger {
+	position: absolute;
+	top: -31px;
+	right: -1px;
+	cursor: pointer;
+	display: inline-flex;
+	color: lightslategray;
+	padding: 2px 1ch;
+	transition: .2s;
+}
+.toggle-code-trigger:hover {
+	color: var(--green);
+}
+
+.resultCssCode {
+	height: 0em;
+	overflow: auto;
+	/* 閉じるアニメーション */
+	transition: .3s;
+}
+.resultCssCode.showCodeToggle {
+	border: 1px solid var(--green);
+	color: var(--green);
+	font-size: 1em;
+	user-select: all;
+	text-align: left;
+	margin: 0;
+	padding: 4px 16px;
+	height: 100%;
+	padding: 16px;
+	/* anim */
+	transition: .3s;
+}

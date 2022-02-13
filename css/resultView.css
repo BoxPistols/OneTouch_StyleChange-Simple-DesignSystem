@@ -11,7 +11,8 @@
 	vertical-align: baseline;
 	margin: 0 8px;
 }
-/* ======= resultView-area ======= */
+
+/* ======= handleCode-area ======= */
 .handleCodeArea > h2 {
 	margin: 0 0.2em -0.6em 0;
 	font-size: 3em;
@@ -23,41 +24,4 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-.resultCode-valueArea {
-	position: fixed;
-	top: 25vh;
-	right: 2vw;
-	border: 1px solid var(--green);
-	box-shadow: var(--shadow);
-	/* background-color: rgb(102 102 102 / 60%); */
-	z-index: 10;
-}
-.toggle-code-trigger {
-	position: absolute;
-	top: -31px;
-	right: -1px;
-	cursor: pointer;
-	display: inline-flex;
-	color: lightslategray;
-	padding: 2px 1ch;
-	transition: .2s;
-}
-.toggle-code-trigger:hover {
-	background-color: var(--green);
-}
-
-.resultCode {
-	color: var(--green);
-	font-size: 1em;
-	user-select: all;
-	text-align: left;
-	margin: 0;
-	height: 0em;
-	padding: 4px 16px;
-	overflow: auto;
-}
-.resultCode.showCodeToggle {
-	height: 100%;
-	padding: 16px;
 }

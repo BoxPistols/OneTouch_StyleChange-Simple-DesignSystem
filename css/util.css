@@ -20,6 +20,19 @@
 	align-items: center;
 }
 
+/* Grid */
+.grid {
+	display: grid;
+}
+
+.place-items-c {
+	place-items: center;
+}
+
+.place-content-c {
+	place-content: center;
+}
+
 /* spacing */
 .mt-s {
 	margin-top: .5rem;

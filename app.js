@@ -1,5 +1,5 @@
 /**
- * TODO: 汎用関数化
+ * TODO: 汎用関数化、ファイル分割
  *
  * TODO: React化
  *    useStateでボタンのテキストを取得、index.innerText?
@@ -25,7 +25,6 @@ const getCssProps = (_searchElm, _target, _styling) => { // (ボタングルー�
         style = tx; // ボタンのテキストを値としてセット
         para.style.setProperty(_styling, tx); // styleの中身を設定[CSSのプロパティ, <- ボタンのテキスト]
 
-
         // コードの可視化
         let codeAll = window.getComputedStyle(container);
         let codeAllselfElement = window.getComputedStyle(selfElement)
@@ -35,7 +34,8 @@ const getCssProps = (_searchElm, _target, _styling) => { // (ボタングルー�
           "justify-content: " + codeAll.justifyContent + ";" + "\n" +
           "align-items: " + codeAll.alignItems + ";" + "\n" +
           "flex-direction: " + codeAll.flexDirection + ";" + "\n" +
-          "flex-wrap: " + codeAll.flexWrap + ";" + "\n"
+          "flex-wrap: " + codeAll.flexWrap + ";" + "\n" +
+          "place-items: " + codeAll.placeItems + ";" + "\n"
         )
         let getCssResultSelf = (
           "\n" +
@@ -43,7 +43,7 @@ const getCssProps = (_searchElm, _target, _styling) => { // (ボタングルー�
           "align-self: " + codeAllselfElement.alignSelf + ";" + "\n" +
           "}"
         )
-        resultCode.innerText = getCssResult + getCssResultSelf;
+        resultCssCode.innerText = getCssResult + getCssResultSelf;
 
         // Debug
         let compStyles = window.getComputedStyle(para); // styleの中身を取得
@@ -65,6 +65,7 @@ resProp('flexDirection', '.container', "flex-direction");
 resProp('justifySelf', '.element', "justify-self");
 resProp('alignSelf', '.element', "align-self");
 resProp('flexWrap', '.container', "flex-wrap");
+resProp('placeItems', '.container', "place-items");
 
 
 // ======= Main Result View Container Element =======
@@ -73,14 +74,14 @@ const selfElement = document.querySelector(".selfElement");
 
 // ======= Reseult Text Grid =======
 const resultGrid = document.querySelector('.resultGrid');
-const resultCode = document.querySelector('.resultCode');
+const resultCssCode = document.querySelector('.resultCssCode');
 
 // ======= Reset =======
 const reset = document.querySelector(".reset");
 
 reset.addEventListener('click', function () {
   resultGrid.innerText = "flex";
-  resultCode.innerText = ""
+  resultCssCode.innerText = ""
   // remove inline Style
   function removeStyles(container) {
     container.removeAttribute('style');
@@ -113,7 +114,7 @@ changeGridSetting(".displayFlex", "flex");
 //  ======= Toggle Code =======
 var trigger = document.querySelector('.toggle-code-trigger');
 trigger.addEventListener('click', function () {
-  var target = document.querySelector('.resultCode');
+  var target = document.querySelector('.resultCssCode');
   target.classList.toggle("showCodeToggle")
 }, false);
 
@@ -124,7 +125,7 @@ trigger.addEventListener('click', function () {
  *    https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Grid_Layout
  *    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout
  * /
- 
+  
 /** Get Grid & Toggle
  const displayGrid = document.querySelector(".displayGrid");
  const displayFlex = document.querySelector(".displayFlex");
