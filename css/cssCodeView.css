@@ -1,7 +1,7 @@
 /* ======= CSS Result View Box ======= */
 .cssCode-valueArea {
 	position: fixed;
-	top: 25vh;
+	top: 33vh;
 	right: 2vw;
 	/* border: 1px solid var(--green);
 	box-shadow: var(--shadow); */
@@ -25,19 +25,23 @@
 .resultCssCode {
 	height: 0em;
 	overflow: auto;
-	/* 閉じるアニメーション */
+	border: none;
+	background: none;
 	transition: .3s;
 }
+
 .resultCssCode.showCodeToggle {
 	border: 1px solid var(--green);
+	border-radius: .5rem;
+	background-color: rgb(20 20 20 / 50%);
 	color: var(--green);
-	font-size: 1em;
+	font-size: 1.6rem;
 	user-select: all;
 	text-align: left;
 	margin: 0;
 	padding: 4px 16px;
 	height: 100%;
 	padding: 16px;
-	/* anim */
+
 	transition: .3s;
 }
